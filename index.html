@@ -6,17 +6,30 @@
     <title>MelonMars</title>
 </head>
 <body>
+    <!-- From: https://shadertoyunofficial.wordpress.com/2018/02/17/embedding-shadertoys-in-website/ -->
+    <div class="background">
+        <iframe allowtransparency="true" width="640" height="360" frameborder="0" src="https://www.shadertoy.com/embed/Xclczf?gui=false&t=10&paused=false&muted=false" style="overflow:hidden;height:100%;width:100%" id="bgFrame"></iframe>
+    </div>
     <div class="topBar">
         <!-- Based on: https://www.w3schools.com/howto/howto_css_dropdown.asp -->
         <div class="dropdown">
-            <button class="dropBtn">Dropdown</button>
+            <button class="dropBtn">Background</button>
             <div class="dropdown-content">
-                <a href="#">L1</a>
-                <a href="#">L2</a>
+                <a href="#" data-url="https://www.shadertoy.com/embed/Xclczf?gui=false&t=10&paused=false&muted=false" class="bgSelect">Mosaic</a>
+                <a href="#" data-url="https://www.shadertoy.com/embed/lffcRS?gui=false&t=10&paused=false&muted=false" class="bgSelect">Rainbow</a>
+                <a href="#" data-url="https://www.shadertoy.com/embed/McXyzB?gui=false&t=10&paused=false&muted=false" class="bgSelect">Voronoi</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="dropBtn">Pages</button>
+            <div class="dropdown-content">
+                <a href="#">About</a>
+                <a href="#">Projects</a>
+                <a href="#">Weblog</a>
             </div>
         </div>
     </div>
-    <div class="draggable" id="draggable">
+    <div class="draggable" style="left: 90px; top: 125px;">
         <div class="nameBar">
             <p>Calling</p>
             <button class="x">
@@ -25,6 +38,6 @@
         </div>
         <p>Hello??</p>
     </div>
-    <script src="move.js"></script>
+    <script src="index.js"></script>
 </body>
 </html>

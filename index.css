@@ -46,6 +46,17 @@
     text-align: left;
 }
 
+.nameBar .maximize {
+    height: 80%;
+    padding-right: 1px;
+    object-fit: contain;
+    display: block;
+    width: 100%;
+    position: relative;
+    left: 43px; /* Adjust as needed */
+}
+
+
 .nameBar img {
     height: 70%;
     padding-right: 1px;
@@ -61,16 +72,30 @@
     cursor: pointer;
 }
 
+.topBar {
+    top: 0;
+    padding-top: 0;
+    position: absolute;
+    background-color: beige;
+    width: 100%;
+    padding-left: 0;
+    margin: 0;
+    left: 0;
+}
+
 /* Based on: https://www.w3schools.com/howto/howto_css_dropdown.asp */
 .dropBtn {
     background-color: beige;
     color: black;
     font-family: OldFont, sans-serif;
-    margin: 0;
     font-size: 16px;
     height: 20px;
-    border: none;
     text-align: center;
+    margin-left: 20px;
+    border-bottom: 1px black solid;
+    border-left: 1px black solid;
+    border-right: 1px black solid;
+    top: 0;
 }
 
 .dropdown {
@@ -93,6 +118,29 @@
     display: block;
 }
 
-.dropdown-content a:hover {background-color: #ddd}
-.dropdown:hover .dropdown-content {display: block;}
-.dropdown:hover .dropdown-content {background-color: #3e8e41}
+.dropdown-content a:hover {
+    background-color: #ddd;
+    font-family: OldFont, sans-serif;
+}
+
+.dropdown:hover .dropdown-content {
+    background-color: beige;
+    display: block;
+    font-family: OldFont, sans-serif;
+}
+
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    pointer-events: none;
+}
+
+iframe {
+    position: relative;
+    width: 100%;
+}
+
