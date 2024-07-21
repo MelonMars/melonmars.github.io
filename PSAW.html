@@ -1,7 +1,75 @@
 <div class="nameBar">
     <p>Python Scratch API Wrapper</p>
+    <a href="https://github.com/MelonMars/PSAW" id="githubIcon"><img src="github.png" alt="Github Repo (icon from Hackernoon)"></a>
     <button class="x">
         <img src="x.png" alt="X out">
     </button>
 </div>
-<p>The Python Scratch API Wrapper is...</p>
+<p>The Python Scratch API Wrapper is an API Wrapper that converts the generic scratch API into python usable bindings.</p>
+<p>The following is taken from the README with some minor modifications:</p>
+<h2>PSAW - Python Scratch API Wrapper</h2>
+<p>Table of contents</p>
+<ul>
+    <li>How to login</li>
+    <li>Commenting</li>
+    <li>Following</li>
+    <li>Loving and favoriting projects</li>
+    <li>Get User data</li>
+    <li>Get project data</li>
+</ul>
+<hr>
+<h4>Logging in</h4>
+<p>Logging is very basic, to log in, and do everything that requires being logged in, one simply needs to use the code below</p>
+<pre>
+    <code>
+import psaw
+
+user = PSAWConnect(username, password) #Put your username and password here
+</code>
+</pre>
+
+<h4>Commenting</h4>
+<p>There are several types of comments in scratch, however, currently in this package, only 1 type is supported, profile comments, they require the user to be logged in</p>
+<pre>
+    <code>
+user.profilecomment("message", "user") #Put message in "message" and username where user is.
+    </code>
+</pre>
+
+<h4>Following</h4>
+<p>Following and unfollowing and both very simple commands in PSAW. All you need to do is type</p>
+<pre>
+    <code>
+user.follow("person") #Put the username you want to follow in "person"
+user.unfollow("person") #Put the username you want to unfollow in "person"
+    </code>
+</pre>
+
+<h4>Loving and Faving projects</h4>
+<p>Loving and faving projects is a common task in scratch, and luckily, is included in PSAW! The code to love and fave, and unlove and unfave is here:</p>
+<pre>
+    <code>
+user.love(project_id) #love a project, put the project id in the parameter
+user.unlove(project_id) #unlove a project,put the project id in the parameter
+user.fave(project_id) #Favorite a project, put the project id in the parameter
+user.unfave(project_id) #Unfavorite a project, put the project id in the parameter
+    </code>
+</pre>
+
+<h3>Getting User Data</h3>
+<p>There are several current features for getting user data, with more coming in the next update! (I have not updated this since 2021)</p>
+<ul>
+    <li>get followers</li>
+    <li>get faves</li>
+    <li>print messages</li>
+</ul>
+<h5>Get followers</h5>
+<p>The get followers command is simply <code>client.get_followers("username")</code>, it returns a list with all the user's followers.</p>
+<h5>Get faves</h5>
+<p>The get faves command is simply <code>client.get_user_faves("username")</code>. It returns a dict with the title of a project with the id of the project. Such as <code>{"test: "0000"}</code></p>
+<h5>Print messages</h5>
+<p>The printmessages command has several parameters. The command is <code>client.print_messages(all, limit, filter, user)</code> the all parameter, a boolean, is whether you want or don't want all the messages, it defaults to True, and you get all messages. The limit param is the limit of messages you want. It is an int, and defaults to 50. If all is set to True, then limit is ignored. Filter is the type of message that you want. You can mainly ignore it however.</p>
+<hr>
+<h1>NOTE: THIS MODULE IS A WORK IN PROGRESS, AND IS NOT THE FINISHED ITEM!</h1>
+
+<sub>This package is very much finished. I forgot about it until a couple of weeks ago. I have not worked on it since I was either 11 or 12 (I think 11), however I will not remove this message or any of the other ones talking about updating it, due to old times sake. PLEASE DO NOT CONTACT ME FOR QUESTIONS ABOUT THIS, I WOULD KNOW AS MUCH OR LESS THAN AS MUCH AS YOU KNOW.</sub>

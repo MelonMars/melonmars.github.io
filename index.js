@@ -79,7 +79,7 @@ document.querySelectorAll('.changeContentLink').forEach((link) => {
                 return response.text();
             })
             .then(html => {
-                document.getElementById('content-container').innerHTML = html;
+                document.getElementById('projects').innerHTML = html;
             })
             .catch(error => {
                 console.error('There was a problem with the fetch operation:', error);
