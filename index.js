@@ -66,24 +66,28 @@ document.getElementById("projectsLink").addEventListener('click', (e) => {
     }
 })
 
-document.querySelectorAll('.changeContentLink').forEach((link) => {
-    link.addEventListener('click', (e) => {
-        e.preventDefault();
-        const dataContent = e.target.getAttribute('data-content');
-        console.log(dataContent);
-        fetch(dataContent + '.html')
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('Network response was not ok');
-                }
-                return response.text();
-            })
-            .then(html => {
-                document.getElementById('projects').innerHTML = html;
-            })
-            .catch(error => {
-                console.error('There was a problem with the fetch operation:', error);
-            });
+function addContentLinkListeners() {
+    document.querySelectorAll('.changeContentLink').forEach((link) => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const dataContent = e.target.getAttribute('data-content');
+            console.log(dataContent);
+            fetch(dataContent + '.html')
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.text();
+                })
+                .then(html => {
+                    document.getElementById('projects').innerHTML = html;
+                    addContentLinkListeners(); // Reattach event listeners
+                })
+                .catch(error => {
+                    console.error('There was a problem with the fetch operation:', error);
+                });
+        });
+    });
+}
 
-    })
-})
+addContentLinkListeners();
