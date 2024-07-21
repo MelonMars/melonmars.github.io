@@ -58,26 +58,32 @@ document.getElementById("aboutLink").addEventListener('click', (e) => {
     }
 })
 
-const contentData = {
-    CarterText: {
-        title: "About - Carter",
-        content: "Carter is a really interesting name."
+document.getElementById("projectsLink").addEventListener('click', (e) => {
+    e.preventDefault();
+    const div = document.getElementById("projects");
+    if (div.style.display === "none" || div.style.display === "") {
+        div.style.display = "block";
     }
-}
+})
 
 document.querySelectorAll('.changeContentLink').forEach((link) => {
     link.addEventListener('click', (e) => {
         e.preventDefault();
-        const {title, content} = contentData[e.getAttribute('data-content')];
-        let draggable = this.parentElement;
+        const dataContent = e.target.getAttribute('data-content');
+        console.log(dataContent);
+        fetch(dataContent + '.html')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.text();
+            })
+            .then(html => {
+                document.getElementById('content-container').innerHTML = html;
+            })
+            .catch(error => {
+                console.error('There was a problem with the fetch operation:', error);
+            });
 
-        while (draggable && draggable.classList.contains('draggable')) {
-            draggable = draggable.parentElement;
-        }
-
-        if (draggable) {
-            draggable.querySelector('.title').innerText = title;
-            draggable.querySelector('.content').innerText = content;
-        }
     })
 })

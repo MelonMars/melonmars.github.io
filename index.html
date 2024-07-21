@@ -8,7 +8,7 @@
 <body>
     <!-- From: https://shadertoyunofficial.wordpress.com/2018/02/17/embedding-shadertoys-in-website/ -->
     <div class="background">
-        <iframe allowtransparency="true" width="640" height="360" frameborder="0" src=Cessna_172S_Skyhawk_SP,_Private_JP6817606.jpg style="overflow:hidden;height:100%;width:100%" id="bgFrame"></iframe>
+        <iframe allowtransparency="true" width="640" height="360" src=Cessna_172S_Skyhawk_SP,_Private_JP6817606.jpg style="overflow:hidden;height:100%;width:100%" id="bgFrame"></iframe>
     </div>
     <div class="topBar">
         <!-- Based on: https://www.w3schools.com/howto/howto_css_dropdown.asp -->
@@ -24,11 +24,12 @@
         <div class="dropdown">
             <button class="dropBtn">Pages</button>
             <div class="dropdown-content">
-                <a href="#about" id="aboutLink">About</a>
-                <a href="#">Projects</a>
+                <a href="#" id="aboutLink">About</a>
+                <a href="#" id="projectsLink">Projects</a>
                 <a href="#">Weblog</a>
             </div>
         </div>
+        <a href="mailto:carterpfaff@gmail.com" id="mailIcon"><img src="message.png" alt="Message me (icon from Hackernoon"></a>
         <a href="https://github.com/MelonMars" id="githubIcon"><img src="github.png" alt="Github Profile (icon from Hackernoon)"></a>
     </div>
     <div class="draggable" id="about">
@@ -38,7 +39,99 @@
                 <img src="x.png" alt="X out">
             </button>
         </div>
-        <p>I am MelonMars. AKA <a href="#" class="changeContentLink" data-content="CarterText">Carter</a>.</p>
+        <p class="content">I am MelonMars. AKA <a href="#" class="changeContentLink" data-content="CarterText">Carter</a>.</p>
+    </div>
+    <div class="draggable" id="projects">
+        <div class="nameBar">
+            <p>Projects - MelonMars</p>
+            <button class="x">
+                <img src="x.png" alt="X out">
+            </button>
+        </div>
+        <p class="content">I have made a lot of projects. Here are some of them: </p>
+        <div class="projectsRow">
+            <div class="project">
+                <a href="#" class="changeContentLink" data-content="WildfireABM"><img src=WildfireABM.png alt="Wildfire ABM" data-content="WildfireABM"><p data-content="WildfireABM">WildfireABM</p></a>
+            </div>
+            <div class="project">
+                <a href="#" class="changeContentLink" data-content="Physarum Polycephalum">
+                    <img src=Physarum.png alt="Physarum Polycephalum (image from Jeff Jones" data-content="Physarum Polycephalum">
+                    <p data-content="Physarum Polycephalum" data-content="Physarum Polycephalum">Physarum Polycephalum</p>
+                </a>
+            </div>
+        </div>
+        <div class="projectsRow">
+            <div class="project">
+                <a href="#" class="changeContentLink" data-content="GiftCircle">
+                    <p data-content="GiftCircle">GiftCircle</p>
+                </a>
+            </div>
+            <div class="project">
+                <a href="#" class="changeContentLink" data-content="PSAW">
+                    <p data-content="PSAW">Python Scratch API Wrapper</p>
+                </a>
+            </div>
+        </div>
+        <div class="projectsRow">
+            <div class="project">
+                <a href="#" class="changeContentLink" data-content="FlowchartEngine">
+                    <p data-content="FlowchartEngine">Flowchart Engine</p>
+                </a>
+            </div>
+            <div class="project">
+                <a href="#" class="changeContentLink" data-content="GeminiBB">
+                    <p data-content="GeminiBB">GeminiBB</p>
+                </a>
+            </div>
+        </div>
+        <div class="projectsRow">
+            <div class="project">
+                <a href="#" class="changeContentLink" data-content="BallisticScript">
+                    <p data-content="BallisticScript">Ballistic Script</p>
+                </a>
+            </div>
+            <div class="project">
+                <a href="#" class="changeContentLink" data-content="Beamer">
+                    <p data-content="Beamer">Beamer Esolang</p>
+                </a>
+            </div>
+        </div>
+        <div class="projectsRow">
+            <div class="project">
+                <a href="#" class="changeContentLink" data-content="TuringMachine">
+                    <p data-content="TuringMachine">Electromechanical Turing Machine</p>
+                </a>
+            </div>
+            <div class="project">
+                <a href="#" class="changeContentLink" data-content="SECScraper">
+                    <p data-content="SECScraper">SECScraper</p>
+                </a>
+            </div>
+        </div>
+        <div class="projectsRow">
+            <div class="project">
+                <a href="#" class="changeContentLink" data-content="FakeNewsGenerator">
+                    <p data-content="FakeNewsGenerator">Fake News Generator</p>
+                </a>
+            </div>
+            <div class="project">
+                <a href="#" class="changeContentLink" data-content="Quoter">
+                    <p data-content="Quoter">AI Quote Generator</p>
+                </a>
+            </div>
+        </div>
+        <div class="projectsRow">
+            <div class="project">
+                <a href="#" class="changeContentLink" data-content="AvionicsPCB">
+                    <p data-content="AvionicsPCB">AvionicsPCB</p>
+                </a>
+            </div>
+            <div class="project">
+                <a href="#" class="changeContentLink" data-content="Blot">
+                    <p data-content="Blot">Algorithmic City Generator</p>
+                </a>
+            </div>
+        </div>
     </div>
     <script src="index.js"></script>
 </body>
