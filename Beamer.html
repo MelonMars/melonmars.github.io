@@ -1,0 +1,51 @@
+<div class="nameBar">
+    <p>Beamer</p>
+    <a href="https://github.com/MelonMars/Beamer" id="githubIcon"><img src="github.png" alt="Github Repo (icon from Hackernoon)"></a>
+    <button class="x">
+        <img src="x.png" alt="X out">
+    </button>
+</div>
+<h1>Beamer</h1>
+<p>Beamer is an esoteric programming language, and was primarily made by me for fun, not for use.</p>
+<p>Beamer is an interpreted language, so you need to use an interpreter to run it, like python. It is also written in python.</p>
+<p>It is based on rays of light moving in a straight line on a grid, until they hit something, where they trigger an operation.</p>
+<p>The way operations are invoked, as only one character can happen at a time, is flags are made, and certain characters hit a flag, causing stuff to happen in the next operation, and there are registers that have values which are manipulated in operations, dependent on the flag.</p>
+<h3>Syntax</h3>
+<p>F = Flashlight, start of program. Arrow next to it dictates position it is pointing in.</p>
+<p>/ = Mirror, reflects the beam 90 degrees.</p>
+<p>\ = Mirror, reflects the beam 270 degrees.</p>
+<p>- = Mirror, reflects the beam 180 degrees.</p>
+<p>N = flips the negative flag.</p>
+<p>1 = Beam Path (Currently)</p>
+<p>+ = Sets the addition flag to true. Addition flag is changed to false upon an addition.</p>
+<p>; = Adds 1 to the addition index.</p>
+<p>, = Subtracts 1 from the addition index.</p>
+<p>0-9 = Adds the number to the addition register at additionIndex, if the addition flag is true.</p>
+<p>? = Ask for input.</p>
+<p>! = Output of the addition index at addition register, in ascii from the number.</p>
+<p># = Increase addition register size by 1.</p>
+<p>S = Beam splitter, splits the beam into two beams. One beam goes 90 degrees to the right, the other goes 90 degrees to the left.</p>
+<p>C = Camera, the first beam after a split that hits it is eliminated.</p>
+<p>D = Division flag, sets the division flag to true. If negative flag is enabled for a division, it becomes a square route.</p>
+<p>M = Multiplication flag, sets the multiplication flag to true.</p>
+<p>* = Square flag. If the multiplication flag is on, then the number is squared when a number is hit by the beam.</p>
+<p>Q = Quantum splitter. Like S, but instead of going in 2 directions, there's straight, 90 degrees to the right, and 90 degrees to the left.</p>
+<p>P = Power. Makes the beam move an extra time each tick until the next power is hit.</p>
+<p>X = Set the swap flag to true. If the swap flag is true when a number is hit, then that number is treated as an index in the addReg, and is swapped with the current addReg index.</p>
+<h5>Addition/Subtraction:</h5>
+<p>    Addition works by having the addition flag being on. There is a default addition register, addReg[0]. addReg can grow in size. addReg[0] is originally set to 0. When the beam hits a number, if the addition flag is on, then that number is added to the current index in addReg. The index is contained in addIndex. If the negative flag is set to true, then until it is turned off, all additions are treated as subtractions.</p>
+<h5>Multiplication/Division:</h5>
+<p>    Same as addition, even uses the addReg, but with a multiplication flag. Division is set by division flag.</p>
+<p>Flags for numerical ops taken precedence in the following order (only one op will happen per character, and their importance is detailed below):</p>
+<ol>
+    <li>Addition</li>
+    <li>Division</li>
+    <li>Multiplication</li>
+    <li>Square</li>
+    <li>Swap</li>
+</ol>
+
+
+<a href="#" class="changeContentLink" data-content="projectsDefault">
+    <p data-content="projectsDefault">Go Back</p>
+</a>

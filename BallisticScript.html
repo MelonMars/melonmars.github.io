@@ -1,0 +1,30 @@
+<div class="nameBar">
+    <p>Ballistic Script</p>
+    <a href="https://github.com/MelonMars/Ballistic-Script" id="githubIcon"><img src="github.png" alt="Github Repo (icon from Hackernoon)"></a>
+    <button class="x">
+        <img src="x.png" alt="X out">
+    </button>
+</div>
+<h1>Ballistic Script</h1>
+<p>Ballistic Script is an esoteric programming language, and was primarily made by me for fun, not for use.</p>
+<p>It is an interpreted language, so you right a program, and then interpret it using <code>balli.c</code>, which relies also on <code>balli.h</code>. <code>balli</code> stands for Ballistic Interpreter</p>
+<h3>Definitions & Syntax:</h3>
+<h5>Memory Field:</h5>
+<p>A Memory Field is the "field" where all the memory is. It is a 2d geometric grid. It appears like the following: <code>++++++++++ +-------6+ +--------+ +---3----+ +------2-+ ++++++++++ 6: "hello" 3: "world" 2: " "</code> It is created at the start of the program, but can be modified via accessing the <code>MemoryField.x.y</code> class, where x and y are points on the field. It is bound by the possible printable characters (minus two due to + and -), as each point can only contain one character. The width of the table must remain constant. The table is not able to be expanded after initial creation. You can use the Default Table by creating a table with <code>+default+</code> at the start in place of the normal one. Illegal characters for use inside of the table when you are constructing and using it are "+", "-" (i.e. you can't assign "-" a value), and "." (has to do with internals)</p>
+<h5>Cannon: </h5>
+<p>The Cannon is what does the actual stuff inside the program. It acts sort of like an instruction pointer in a way. It says <code>do x at y point</code> basically. Inside the cannonCommands section of the program, there are several possible commands. Those commands are: - move - fire The Cannon contains a <code>reg</code> (register) that holds one value, in string form, but can be converted.</p>
+<h5>Move</h5>
+<p>Move moves the cannon. It's called by <code>move(x, y)</code>. X and Y can be negative as long as they don't let the cannon's position go negative.</p>
+<h5>Fire</h5>
+<p>Fire shoots the cannon. It's called by <code>fire(rotation, power)</code>, and is supposed to hit something.</p>
+<h3>Syntax (broadly):</h3>
+<p>Define a Memory Field, and then proceed controlling the Cannon in order to do stuff. Example: <code>.memField +default+ .cannonCommands fire(20, 10) fire(40, 10) .end</code> Make sure to use newlines, no semicolons</p>
+<p>The Instruction Set is basically the angle of the impact. Each time a tile is impacted the angle will determine what operation to run on that tile.</p>
+
+
+
+
+
+<a href="#" class="changeContentLink" data-content="projectsDefault">
+    <p data-content="projectsDefault">Go Back</p>
+</a>
