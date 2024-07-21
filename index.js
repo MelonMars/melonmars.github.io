@@ -49,3 +49,35 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
 });
+
+document.getElementById("aboutLink").addEventListener('click', (e) => {
+    e.preventDefault();
+    const div = document.getElementById("about");
+    if (div.style.display === "none" || div.style.display === "") {
+        div.style.display = "block";
+    }
+})
+
+const contentData = {
+    CarterText: {
+        title: "About - Carter",
+        content: "Carter is a really interesting name."
+    }
+}
+
+document.querySelectorAll('.changeContentLink').forEach((link) => {
+    link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const {title, content} = contentData[e.getAttribute('data-content')];
+        let draggable = this.parentElement;
+
+        while (draggable && draggable.classList.contains('draggable')) {
+            draggable = draggable.parentElement;
+        }
+
+        if (draggable) {
+            draggable.querySelector('.title').innerText = title;
+            draggable.querySelector('.content').innerText = content;
+        }
+    })
+})
