@@ -66,6 +66,14 @@ document.getElementById("projectsLink").addEventListener('click', (e) => {
     }
 })
 
+document.getElementById("libraryLink").addEventListener('click', (e) => {
+    e.preventDefault();
+    const div = document.getElementById("library");
+    if (div.style.display === "none" || div.style.display === "") {
+        div.style.display = "block";
+    }
+})
+
 function addContentLinkListeners() {
     document.querySelectorAll('.changeContentLink').forEach((link) => {
         link.addEventListener('click', (e) => {

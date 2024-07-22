@@ -34,7 +34,19 @@
     max-height: 100%;
 }
 
-#about.draggable.logo {
+#library.draggable {
+    display: none;
+    top: 90px;
+    right: 125px;
+    width: 80%;
+    height: 60%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+#about.draggable .logo {
     max-width: 20%;
     max-height: 20%;
 }
