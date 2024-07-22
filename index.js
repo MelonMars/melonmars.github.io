@@ -122,5 +122,7 @@ function addContentLinkListenersLibrary() {
     });
 }
 
-addContentLinkListenersLibrary();
-addContentLinkListenersProjects();
+document.addEventListener('DOMContentLoaded', () => {
+    addContentLinkListenersLibrary();
+    addContentLinkListenersProjects();
+});
