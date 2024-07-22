@@ -74,7 +74,7 @@ document.getElementById("libraryLink").addEventListener('click', (e) => {
     }
 })
 
-function addContentLinkListeners() {
+function addContentLinkListenersProjects() {
     document.querySelectorAll('.changeContentLink').forEach((link) => {
         link.addEventListener('click', (e) => {
             e.preventDefault();
@@ -89,7 +89,7 @@ function addContentLinkListeners() {
                 })
                 .then(html => {
                     document.getElementById('projects').innerHTML = html;
-                    addContentLinkListeners(); // Reattach event listeners
+                    addContentLinkListenersProjects(); // Reattach event listeners
                 })
                 .catch(error => {
                     console.error('There was a problem with the fetch operation:', error);
@@ -98,4 +98,30 @@ function addContentLinkListeners() {
     });
 }
 
-addContentLinkListeners();
+addContentLinkListenersProjects();
+
+function addContentLinkListenersLibrary() {
+    document.querySelectorAll('.changeContentLink').forEach((link) => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const dataContent = e.target.getAttribute('data-content');
+            console.log(dataContent);
+            fetch(dataContent + '.html')
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.text();
+                })
+                .then(html => {
+                    document.getElementById('library').innerHTML = html;
+                    addContentLinkListenersLibrary(); // Reattach event listeners
+                })
+                .catch(error => {
+                    console.error('There was a problem with the fetch operation:', error);
+                });
+        });
+    });
+}
+
+addContentLinkListenersLibrary();
