@@ -98,10 +98,8 @@ function addContentLinkListenersProjects() {
     });
 }
 
-addContentLinkListenersProjects();
-
 function addContentLinkListenersLibrary() {
-    document.querySelectorAll('.changeContentLink').forEach((link) => {
+    document.querySelectorAll('.changeContentLink2').forEach((link) => {
         link.addEventListener('click', (e) => {
             e.preventDefault();
             const dataContent = e.target.getAttribute('data-content');
@@ -125,3 +123,4 @@ function addContentLinkListenersLibrary() {
 }
 
 addContentLinkListenersLibrary();
+addContentLinkListenersProjects();
